@@ -173,11 +173,36 @@ blockquote > cite:before {
 
 <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
 </b:section>
+
   <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
-    <b:widget id='Blog' locked='false' title='Articles' type='Blog'/>
+  
+ <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
+        <b:includable id='main' var='post'>
+          <b:include name='Posts'/>
+          <b:include name='nextprev'/>
+        </b:includable>
+	
+	
+	<b:includable id='labels' var='post'>
+          <b:if cond='data:post.labels'>
+            Labels: 
+            <b:loop values='data:post.labels' var='label'>
+              <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+              <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
+            </b:loop>
+          </b:if>
+        </b:includable>
+	
+	<b:includable id='shareButtons'/>
+        <b:includable id='mobile-nextprev'/>
+        <b:includable id='mobile-index-post'/>
+	
   </b:section>
+  
 <b:section id='footer' class='footer' showaddelement="no">
+
 <b:widget id='HTML1' locked='false' title='Cites' type='HTML' />
+
  <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
 
 		<div class="copyright">
