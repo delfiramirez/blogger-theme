@@ -16,6 +16,8 @@ The one-column concept leaves a division of spaces that allow us to tailor conte
 
 No comments allowed, by default.
 
+Made in 2015.
+
 #Use
 
 1.- Login to your Blogger Admin account.
@@ -24,4 +26,4 @@ No comments allowed, by default.
 
 3.- Enjoy.
 
-Made in 2015.
+
