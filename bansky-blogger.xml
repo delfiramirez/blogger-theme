@@ -89,6 +89,9 @@ strong , b{
   font-weight: bold;
 }
 
+/* Table Content
+----------------------------------------------- */
+
 table {
 	border-collapse:collapse;
 	border-spacing:0;
@@ -120,11 +123,17 @@ td.tr-caption {
 	font-style:italic;
 }
 
+/* Headings
+----------------------------------------------- */
+
+
 h1, h2, h3, h4, h5, h6 {
   font: normal bold IM Fell English
   font-size:100%;
 }
 
+/* Cites
+----------------------------------------------- */
 blockquote {
     font: normal 22px IM Fell English;
     color: #9b9b9b;
@@ -155,6 +164,17 @@ blockquote > cite:before {
 	padding-right: 20px;
 }
 
+/* Widget Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 11px IM Fell English;
+color: #434343;
+}
+
+/* Widgets
+----------------------------------------------- */
 #Navbar1 {
 	dispaly:none!important;
 }
@@ -194,7 +214,7 @@ blockquote > cite:before {
 	
 	<b:includable id='labels' var='post'>
           <b:if cond='data:post.labels'>
-            Labels: 
+           Libellés :
             <b:loop values='data:post.labels' var='label'>
               <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
               <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
@@ -215,7 +235,7 @@ blockquote > cite:before {
  <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
 
 		<div class="copyright">
-			Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - All Rights Reserved
+			Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits réservés
 		</div>
 		</b:section>
 </body>
