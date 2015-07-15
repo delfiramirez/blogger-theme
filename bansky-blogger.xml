@@ -172,6 +172,15 @@ blockquote > cite:before {
 </b:section>
 
 <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+
+ <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
+  <b:includable id='main'>
+   <b:include name="title" data='blog'/>
+  </b:includable>
+  
+    <b:includable id='title' var='b'>
+   <data:b.title/><br/>
+  </b:includable>
 </b:section>
 
   <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
@@ -206,7 +215,7 @@ blockquote > cite:before {
  <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
 
 		<div class="copyright">
-			Copyright Alain Moreau &ampersand; Segonquart Studio - All Rights Reserved
+			Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - All Rights Reserved
 		</div>
 		</b:section>
 </body>
