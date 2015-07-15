@@ -8,11 +8,11 @@
 
 Template for publishing writings of editorial content concerning the humanities, art and historical field. It arises from the need of an editor, Mr. Alain Moreau, which conveys to get, effectively, a diffusion of his writings through the social network Blogger.
 
-As its literary content is focused on the academic and literate reader, we primacy appearance and concept of thebook "as object".
+As the content to be published is focused on the academic and literate reader, we primacy the  appearance and concept of the book "as an object".
 
-We wanted to mimic the structure of the classic newspaper columns. To this end, it has been carefully selectedl the fonts to use, the range of colors, and the spaces; all of which allow us a pleasant reading without distractions.
+We wanted to mimic the structure of a classic newspaper column. To this end, it has been carefully selected the fonts to use, the range of colors, and the spaces between paragraphs; allowing us a pleasant reading without distractions.
 
-The one-column concept leaves a division of spaces that allow us to tailor content for different screen formats.
+The one-column concept leaves a division of spaces permit us  to tailor the content for different screen formats or devices.
 
 No comments allowed, by default.
 
