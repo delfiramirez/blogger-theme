@@ -34,6 +34,29 @@ URL:      www.segonquart.net
 -----------------------------------------------
 */
 
+/* Variable definitions
+-----------------------------------------------
+     <Group description="Page Text" selector="body">
+     
+     <Variable 
+     name="body.font" 
+     description="Font" type="font"
+     default="normal normal 12px IM Fell English" 
+     value="normal normal 12px IM Fell English"/>
+     
+     <Variable 
+     name="body.text.color" 
+     description="Text Color" type="color" 
+     default="#020202" 
+     value="#020202"/>
+     
+   </Group>
+  
+*/
+
+/* CSS Style
+-----------------------------------------------
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td 
 {
 	margin:0;
