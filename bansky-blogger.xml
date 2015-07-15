@@ -172,14 +172,17 @@ blockquote > cite:before {
 </b:section>
 
 <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
-<!-- Section contents -->
 </b:section>
   <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
     <b:widget id='Blog' locked='false' title='Articles' type='Blog'/>
   </b:section>
 <b:section id='footer' class='footer' showaddelement="no">
+<b:widget id='HTML1' locked='false' title='Cites' type='HTML' />
  <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
-</b:section>
 
+		<div class="copyright">
+			Copyright Alain Moreau &ampersand; Segonquart Studio - All Rights Reserved
+		</div>
+		</b:section>
 </body>
 </html>
