@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+  <head>
+  <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+  <b:if cond='data:blog.isMobile'>
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+  <b:else/>
+    <meta content='width=1100' name='viewport'/>
+  </b:if>
+  
+  <b:include data='blog' name='all-head-content'/>
+<title>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <data:blog.pageTitle/>
+        <b:else/>
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+          <data:blog.pageName/> | <data:blog.title/>
+          <b:else/>
+          Page Not Found | <data:blog.title/>
+        </b:if>
+      </b:if>
+    </title>
+
+    <b:skin>
+    
+    <![CDATA[
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     BansKy
+Designer:  Delfi Ramirez
+URL:      www.segonquart.net
+-----------------------------------------------
+*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td 
+{
+	margin:0;
+	padding:0;
+}
+
+*, *:before, *:after {
+    -webkit-text-size-adjust: auto;
+}
+
+html, body {
+	margin:0;
+	padding:0;
+	word-wrap: true;
+}
+
+body {
+	background:#fafafa;
+	color:#020202;
+}
+
+div{
+
+    text-rendering: optimizeLegibility;
+    text-justify: inter-word;
+    line-height:1.6em;
+    word-wrap: break-word;
+        -webkit-justify-content: space-around;
+        -webkit-font-smoothing: antialiased;
+}
+
+img, iframe, object, embed
+{
+    max-width: 100%;
+    width: auto\9;
+}
+
+hr     {
+	clear:both;
+}
+
+q:before, q:after {
+	content:'';
+}
+
+abbr, acronym {
+	border:0;
+}
+
+strong , b{
+  font: normal bold IM Fell English
+  font-style:bold;
+  font-weight: bold;
+}
+
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+tbody {
+	border: none !important;
+	color: #4b4b4b;
+}
+
+caption, th 
+{
+     text-align:left;
+}
+
+.tr-caption {
+	color:#212121;
+	text-align:center;
+	padding: 1em;
+	line-height: 1.38em;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-size:80%;
+}
+
+td.tr-caption {
+	font-size: 50%;
+	color:#5d5d5d;
+	font-style:italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font: normal bold IM Fell English
+  font-size:100%;
+}
+
+blockquote {
+    font: normal 22px IM Fell English;
+    color: #9b9b9b;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    padding-left: 15px;
+    border-left: 3px solid #ccc;
+    border-right:1 px solid #ccc;
+    border-top:1 px solid #ccc;
+    border-bottom: 1 px solid #ccc;
+}
+
+blockquote > cite {
+    font: normal bold IM Fell English;
+    color: #8e8b8e;
+    font-size: 14px;
+    display: block;
+    margin-top: 5px;
+}
+
+blockquote > cite:before {
+    content: "\2014 \2009";
+}
+
+.mini {
+	float:left;
+	padding-right: 20px;
+}
+
+#Navbar1 {
+	dispaly:none!important;
+}
+]]>
+
+</b:skin>
+
+</head>
+<body>
+
+  <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+
+<b:widget id='Navbar1' locked='true' title='Navigation' type='Navbar'/>
+
+</b:section>
+
+<b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+<!-- Section contents -->
+</b:section>
+  <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
+    <b:widget id='Blog' locked='false' title='Articles' type='Blog'/>
+  </b:section>
+<b:section id='footer' class='footer' showaddelement="no">
+ <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
+</b:section>
+
+</body>
+</html>
