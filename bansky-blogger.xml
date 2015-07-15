@@ -235,7 +235,7 @@ color: #434343;
  <b:widget id='AttributionAM' locked='false' title='' type='Attribution'/>
 
 		<div class="copyright">
-			Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits réservés
+			Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&eacute;serv&eacute;s
 		</div>
 		</b:section>
 </body>
