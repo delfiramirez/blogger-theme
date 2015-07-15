@@ -214,7 +214,7 @@ color: #434343;
 	
 	<b:includable id='labels' var='post'>
           <b:if cond='data:post.labels'>
-           Libellés :
+           Libell&eacute;s :
             <b:loop values='data:post.labels' var='label'>
               <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
               <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
