@@ -77,28 +77,28 @@
             </Group>
 
             <Group description="Links" selector=".main-outer">
-                
+
                 <Variable 
                     name="link.color" 
                     description="Link Color" 
                     type="color" 
                     default="#0c343d" 
                     value="#0c343d"/>
-                
+
                 <Variable 
                     name="link.visited.color" 
                     description="Visited Color" 
                     type="color" 
                     default="#073763" 
                     value="#073763"/>
-                
+
                 <Variable 
                     name="link.hover.color" 
                     description="Hover Color" 
                     type="color" 
                     default="#0c343d" 
                     value="#0c343d"/>
-                
+
             </Group>
 
             <Group description="Tabs Text" selector=".tabs-inner .widget li a">
@@ -146,8 +146,7 @@
             /* CSS Style
             -----------------------------------------------
 
-            body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td 
-            {
+            body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
             margin:0;
             padding:0;
             }
@@ -182,13 +181,10 @@
             }
 
             hr     {
-
             clear:both;
-
             }
 
             q:before, q:after {
-
             content:'';
             }
 
@@ -196,7 +192,7 @@
             border:0;
             }
 
-            strong , b{
+            strong , b {
             font: normal bold IM Fell English
             font-style:bold;
             font-weight: bold;
@@ -215,8 +211,7 @@
             color: #4b4b4b;
             }
 
-            caption, th 
-            {
+            caption, th {
             text-align:left;
             }
 
@@ -236,6 +231,68 @@
             font-style:italic;
             }
 
+            /* Lists
+            ----------------------------------------------- */
+
+            ol {
+            list-style-type: decimal;
+            list-style-position: inside;
+            padding: .6em;
+            margin-left: 50px;
+            padding-left: 15px;
+            }
+
+            ol li {
+            margin-left : 10px;
+            text-align:justify;
+            }
+
+            // 456bereastreet.com
+
+            ol {
+            counter-reset:li; 
+            margin-left:10px; 
+            padding-left:0; 
+            font-size: 80%;
+
+            }
+            ol > li {
+            position:relative;
+            margin:10px 0 10px 2em;
+            padding:2px 8px;
+            list-style:none;
+            line-height: 2em;
+            border-bottom: 2px solid #ededed;
+
+
+            }
+            ol > li:before {
+            content:counter(li);
+            counter-increment:li;
+            position:absolute;
+            top:-2px;
+            left:-2em;
+            -moz-box-sizing:border-box;
+            -webkit-box-sizing:border-box;
+            box-sizing:border-box;
+            width:2em;
+            margin-left:8px;
+            padding:1px;
+            color:#4b4b4b;
+            font-weight:bold;
+            text-align:center;
+            }
+
+            //end
+
+            li ol,
+            li ul {
+            margin-top:6px;
+            }
+            ol ol li:last-child {
+            margin-bottom:0;
+            }
+
             /* Headings
             ----------------------------------------------- */
 
@@ -243,6 +300,26 @@
             h1, h2, h3, h4, h5, h6 {
             font: normal bold IM Fell English
             font-size:100%;
+            }
+
+            h1,h2, h3{
+            color: #5b5b5b;
+            margin: 0;
+            padding: 1em;
+            font-size: 130%;
+            line-height: 1.2em;
+            font: bold normal IM Fell English;
+            text-align:justify;
+            text-overflow: ellipsis;
+            word-wrap:true;
+            }
+
+            h4 {
+            font: normal 70% IM Fell English;
+            text-align:center;
+            vertical-align:middle;
+            word-wrap: break-word;
+            border-bottom: 1px solid #ccc;
             }
 
             /* Cites
@@ -275,6 +352,14 @@
             .mini {
             float:left;
             padding-right: 20px;
+            }
+
+            .titlewrapper {
+            border-bottom: 3px solid #4a4a4a;
+            }
+
+            .descriptionwrapper {
+            border-bottom: 3px solid #4a4a4a;
             }
 
             /* Widget Headings
