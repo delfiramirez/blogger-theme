@@ -24,6 +24,8 @@ Made in 2015.
 
 2.- Go to Template > Browse your XML template file > Click on Upload button.
 
-3.- Enjoy.
+3.- Publish.
+
+4.- Enjoy.
 
 
