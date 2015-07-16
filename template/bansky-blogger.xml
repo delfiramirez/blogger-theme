@@ -51,32 +51,88 @@
                     value="#020202"/>
 
             </Group>
-               <Group description="Tabs Text" selector=".tabs-inner .widget li a">
-     <Variable 
-         name="tabs.font" 
-         description="Font" 
-         type="font"
-         default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 14px IM Fell English SC"/>
-     <Variable 
-         name="tabs.text.color" 
-         description="Text Color" 
-         type="color" 
-         default="#999999" 
-         value="#999999"/>
-     <Variable 
-         name="tabs.selected.text.color" 
-         description="Selected Color" 
-         type="color" 
-         default="#020202" 
-         value="#020202"/>
-   </Group>
+
+            <Group description="Backgrounds"  selector=".body-outer">
+                <Variable 
+                    name="body.background.color" 
+                    description="Outer Background" 
+                    type="color" 
+                    default="#fafafa" 
+                    value="#fafafa"/>
+
+                <Variable 
+                    name="content.background.color" 
+                    description="Main Background" 
+                    type="color" 
+                    default="#ffffff" 
+                    value="#ffffff"/>
+
+                <Variable 
+                    name="header.background.color" 
+                    description="Header Background" 
+                    type="color" 
+                    default="transparent" 
+                    value="#fafafa"/>
+
+            </Group>
+
+            <Group description="Links" selector=".main-outer">
+                
+                <Variable 
+                    name="link.color" 
+                    description="Link Color" 
+                    type="color" 
+                    default="#0c343d" 
+                    value="#0c343d"/>
+                
+                <Variable 
+                    name="link.visited.color" 
+                    description="Visited Color" 
+                    type="color" 
+                    default="#073763" 
+                    value="#073763"/>
+                
+                <Variable 
+                    name="link.hover.color" 
+                    description="Hover Color" 
+                    type="color" 
+                    default="#0c343d" 
+                    value="#0c343d"/>
+                
+            </Group>
+
+            <Group description="Tabs Text" selector=".tabs-inner .widget li a">
+
+                <Variable 
+                    name="tabs.font" 
+                    description="Font" 
+                    type="font"
+                    default="normal normal 12px IM Fell English" 
+                    value="normal normal 14px IM Fell English SC"/>
+
+                <Variable 
+                    name="tabs.text.color" 
+                    description="Text Color" 
+                    type="color" 
+                    default="#999999" 
+                    value="#999999"/>
+                <Variable 
+                    name="tabs.selected.text.color" 
+                    description="Selected Color" 
+                    type="color" 
+                    default="#020202" 
+                    value="#020202"/>
+            </Group>
+
             <Group description="Tabs Background" selector=".tabs-outer .PageList">
+
                 <Variable 
                     name="tabs.background.color" 
                     description="Background Color" 
                     type="color" 
                     default="#f5f5f5" 
                     value="#f5f5f5"/>
+
                 <Variable 
                     name="tabs.selected.background.color" 
                     description="Selected Color" 
@@ -119,20 +175,20 @@
             -webkit-justify-content: space-around;
             -webkit-font-smoothing: antialiased;
             }
-            
+
             img, iframe, object, embed {
             max-width: 100%;
             width: auto\9;
             }
 
             hr     {
-            
+
             clear:both;
-            
+
             }
 
             q:before, q:after {
-            
+
             content:'';
             }
 
