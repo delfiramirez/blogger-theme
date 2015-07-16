@@ -9,7 +9,14 @@
             <meta content='width=1100' name='viewport'/>
         </b:if>
 
+        <b:if cond='data:blog.metaDescription'>
+            <meta expr:content='data:blog.metaDescription' name='description' property='og:description'/>
+            <b:else/>
+            <meta expr:content='data:blog.pageName' name='description' property='og:description'/>
+        </b:if>
+
         <b:include data='blog' name='all-head-content'/>
+
         <title>
             <b:if cond='data:blog.pageType == &quot;index&quot;'>
                 <data:blog.pageTitle/>
@@ -28,7 +35,7 @@
             /*
             -----------------------------------------------
             Blogger Template Style
-            Name:     BansKy
+            Name:     BansKy Dellarte
             Designer:  Delfi Ramirez
             URL:      www.segonquart.net
             -----------------------------------------------
@@ -36,6 +43,7 @@
 
             /* Variable definitions
             ----------------------------------------------- */
+
             <Group description="Page Text" selector="body">
 
                 <Variable 
@@ -51,6 +59,21 @@
                     value="#020202"/>
 
             </Group>
+
+            <Variable 
+                name="body.background" 
+                description="Body Background" 
+                type="background"
+                color="$(body.background.color)" 
+                default="$(color) none repeat scroll top left" 
+                value="$(color) none repeat scroll top left"/>
+
+            <Variable 
+                name="body.background.override" 
+                description="Body Background Override" 
+                type="string" 
+                default="" 
+                value=""/>
 
             <Group description="Backgrounds"  selector=".body-outer">
                 <Variable 
@@ -116,13 +139,14 @@
                     type="color" 
                     default="#999999" 
                     value="#999999"/>
+
                 <Variable 
                     name="tabs.selected.text.color" 
                     description="Selected Color" 
                     type="color" 
                     default="#020202" 
                     value="#020202"/>
-                
+
             </Group>
 
             <Group description="Tabs Background" selector=".tabs-outer .PageList">
@@ -140,7 +164,31 @@
                     type="color" 
                     default="#eeeeee" 
                     value="#eeeeee"/>
-                
+
+            </Group>
+
+            <Group description="Images" selector=".main">
+
+                <Variable 
+                    name="image.background.color" 
+                    description="Background Color" 
+                    type="color" default="#ffffff" 
+                    value="#ffffff"/>
+
+                <Variable 
+                    name="image.border.color" 
+                    description="Border Color" 
+                    type="color" 
+                    default="#eeeeee" 
+                    value="#eeeeee"/>
+
+                <Variable 
+                    name="image.text.color" 
+                    description="Caption Text Color" 
+                    type="color" 
+                    default="$(body.text.color)" 
+                    value="$(body.text.color)"/>
+
             </Group>
 
             */
@@ -164,7 +212,7 @@
             }
 
             body {
-            background:$(body.background.color);
+            background: $(body.background);
             color:$(body.text.color);
             min-height: 100%;
             height:auto !important;
@@ -205,7 +253,7 @@
             }
 
             strong , b {
-            font: normal bold IM Fell English
+            font: $(body.font)
             font-style:bold;
             font-weight: bold;
             }
@@ -267,7 +315,7 @@
             padding-left:0; 
             font-size: 80%;
             }
-            
+
             ol > li {
             position:relative;
             margin:10px 0 10px 2em;
@@ -276,7 +324,7 @@
             line-height: 2em;
             border-bottom: 2px solid #ededed;
             }
-            
+
             ol > li:before {
             content:counter(li);
             counter-increment:li;
@@ -309,7 +357,7 @@
 
 
             h1, h2, h3, h4, h5, h6 {
-            font: normal bold IM Fell English
+            font: $(body.font);
             font-size:100%;
             }
 
@@ -319,7 +367,7 @@
             padding: 1em;
             font-size: 130%;
             line-height: 1.2em;
-            font: bold normal IM Fell English;
+            font: $(body.font)
             text-align:justify;
             text-overflow: ellipsis;
             word-wrap:true;
@@ -335,7 +383,7 @@
 
             /* Cites
             ----------------------------------------------- */
-            
+
             blockquote {
             font: normal 22px IM Fell English;
             color: #9b9b9b;
@@ -350,7 +398,7 @@
             }
 
             blockquote > cite {
-            font: normal bold IM Fell English;
+            font: $(body.font);
             color: #8e8b8e;
             font-size: 14px;
             display: block;
@@ -360,8 +408,8 @@
             blockquote > cite:before {
             content: "\2014 \2009";
             }
-            
-           /* Structure
+
+            /* Structure
             ----------------------------------------------- */    
 
             .mini {
@@ -379,7 +427,7 @@
 
             /* Widget Headings
             ----------------------------------------------- */
-            
+
             div.widget > h2,
             div.widget h2.title {
             margin: 0 0 1em 0;
@@ -389,12 +437,12 @@
 
             /* Widgets
             ----------------------------------------------- */
-            
+
             #Navbar1 {
             display:none!important;
             }
 
-            .widget-content{
+            .widget-content {
             clear:both;
             background-color:#fafafa;
             }
@@ -414,7 +462,7 @@
         <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
 
             <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
-                
+
                 <b:includable id='main'>
                     <b:include name="title" data='blog'/>
                 </b:includable>
@@ -422,7 +470,7 @@
                 <b:includable id='title' var='b'>
                     <data:b.title/><br/>
                 </b:includable>
-                
+
             </b:widget>
 
         </b:section>
@@ -454,21 +502,20 @@
                 <b:includable id='shareButtons'/>
                 <b:includable id='mobile-nextprev'/>
                 <b:includable id='mobile-index-post'/>
-                
+
             </b:widget>
-            
+
         </b:section>
 
         <b:section id='footer' class='footer' showaddelement="no">
 
-            <b:widget id='HTML1' locked='false' title='Copyright' type='HTML' />
+            <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
 
-            <div class="copyright">
-                Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
-            </div>
-            
+                <div class="copyright">
+                    Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
+                </div>
+
             </b:widget>    
         </b:section>
-        
     </body>
 </html>
