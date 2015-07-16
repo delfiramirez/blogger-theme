@@ -35,7 +35,7 @@
             */
 
             /* Variable definitions
-            -----------------------------------------------
+            ----------------------------------------------- */
             <Group description="Page Text" selector="body">
 
                 <Variable 
@@ -122,6 +122,7 @@
                     type="color" 
                     default="#020202" 
                     value="#020202"/>
+                
             </Group>
 
             <Group description="Tabs Background" selector=".tabs-outer .PageList">
@@ -139,12 +140,13 @@
                     type="color" 
                     default="#eeeeee" 
                     value="#eeeeee"/>
+                
             </Group>
 
             */
 
             /* CSS Style
-            -----------------------------------------------
+            ----------------------------------------------- */
 
             body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
             margin:0;
@@ -264,8 +266,8 @@
             margin-left:10px; 
             padding-left:0; 
             font-size: 80%;
-
             }
+            
             ol > li {
             position:relative;
             margin:10px 0 10px 2em;
@@ -273,9 +275,8 @@
             list-style:none;
             line-height: 2em;
             border-bottom: 2px solid #ededed;
-
-
             }
+            
             ol > li:before {
             content:counter(li);
             counter-increment:li;
@@ -334,6 +335,7 @@
 
             /* Cites
             ----------------------------------------------- */
+            
             blockquote {
             font: normal 22px IM Fell English;
             color: #9b9b9b;
@@ -358,6 +360,9 @@
             blockquote > cite:before {
             content: "\2014 \2009";
             }
+            
+           /* Structure
+            ----------------------------------------------- */    
 
             .mini {
             float:left;
@@ -374,6 +379,7 @@
 
             /* Widget Headings
             ----------------------------------------------- */
+            
             div.widget > h2,
             div.widget h2.title {
             margin: 0 0 1em 0;
@@ -383,6 +389,7 @@
 
             /* Widgets
             ----------------------------------------------- */
+            
             #Navbar1 {
             display:none!important;
             }
