@@ -17,7 +17,7 @@
                 <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
                     <data:blog.pageName/> | <data:blog.title/>
                     <b:else/>
-                    Article non trouv&eacute; | <data:blog.title/>
+                    Article non trouv&amp;eacute; | <data:blog.title/>
                 </b:if>
             </b:if>
         </title>
@@ -422,7 +422,7 @@
 
                 <b:includable id='labels' var='post'>
                     <b:if cond='data:post.labels'>
-                        Libell&eacute;s :
+                        Libell&amp;eacute;s :
                         <b:loop values='data:post.labels' var='label'>
                             <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
                             <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
@@ -441,7 +441,7 @@
             <b:widget id='HTML1' locked='false' title='Copyright' type='HTML' />
 
             <div class="copyright">
-                Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&eacute;serv&eacute;s
+                Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&eacute;serv&eacute;s
             </div>
             </b:widget>
         </b:section>
