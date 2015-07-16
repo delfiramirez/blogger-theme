@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
+    <head>
+        <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+        <b:if cond='data:blog.isMobile'>
+            <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+            <b:else/>
+            <meta content='width=1100' name='viewport'/>
+        </b:if>
+
+        <b:include data='blog' name='all-head-content'/>
+        <title>
+            <b:if cond='data:blog.pageType == &quot;index&quot;'>
+                <data:blog.pageTitle/>
+                <b:else/>
+                <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+                    <data:blog.pageName/> | <data:blog.title/>
+                    <b:else/>
+                    Article non trouv&eacute; | <data:blog.title/>
+                </b:if>
+            </b:if>
+        </title>
+
+        <b:skin>
+
+            <![CDATA[
+            /*
+            -----------------------------------------------
+            Blogger Template Style
+            Name:     BansKy
+            Designer:  Delfi Ramirez
+            URL:      www.segonquart.net
+            -----------------------------------------------
+            */
+
+            /* Variable definitions
+            -----------------------------------------------
+            <Group description="Page Text" selector="body">
+
+                <Variable 
+                    name="body.font" 
+                    description="Font" type="font"
+                    default="normal normal 12px IM Fell English" 
+                    value="normal normal 12px IM Fell English"/>
+
+                <Variable 
+                    name="body.text.color" 
+                    description="Text Color" type="color" 
+                    default="#020202" 
+                    value="#020202"/>
+
+            </Group>
+               <Group description="Tabs Text" selector=".tabs-inner .widget li a">
+     <Variable 
+         name="tabs.font" 
+         description="Font" 
+         type="font"
+         default="normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif" value="normal normal 14px IM Fell English SC"/>
+     <Variable 
+         name="tabs.text.color" 
+         description="Text Color" 
+         type="color" 
+         default="#999999" 
+         value="#999999"/>
+     <Variable 
+         name="tabs.selected.text.color" 
+         description="Selected Color" 
+         type="color" 
+         default="#020202" 
+         value="#020202"/>
+   </Group>
+            <Group description="Tabs Background" selector=".tabs-outer .PageList">
+                <Variable 
+                    name="tabs.background.color" 
+                    description="Background Color" 
+                    type="color" 
+                    default="#f5f5f5" 
+                    value="#f5f5f5"/>
+                <Variable 
+                    name="tabs.selected.background.color" 
+                    description="Selected Color" 
+                    type="color" 
+                    default="#eeeeee" 
+                    value="#eeeeee"/>
+            </Group>
+
+            */
+
+            /* CSS Style
+            -----------------------------------------------
+
+            body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td 
+            {
+            margin:0;
+            padding:0;
+            }
+
+            *, *:before, *:after {
+            -webkit-text-size-adjust: auto;
+            }
+
+            html, body {
+            margin:0;
+            padding:0;
+            word-wrap: true;
+            }
+
+            body {
+            background:#fafafa;
+            color:#020202;
+            }
+
+            div {
+            text-rendering: optimizeLegibility;
+            text-justify: inter-word;
+            line-height:1.6em;
+            word-wrap: break-word;
+            -webkit-justify-content: space-around;
+            -webkit-font-smoothing: antialiased;
+            }
+            
+            img, iframe, object, embed {
+            max-width: 100%;
+            width: auto\9;
+            }
+
+            hr     {
+            
+            clear:both;
+            
+            }
+
+            q:before, q:after {
+            
+            content:'';
+            }
+
+            abbr, acronym {
+            border:0;
+            }
+
+            strong , b{
+            font: normal bold IM Fell English
+            font-style:bold;
+            font-weight: bold;
+            }
+
+            /* Table Content
+            ----------------------------------------------- */
+
+            table {
+            border-collapse:collapse;
+            border-spacing:0;
+            }
+
+            tbody {
+            border: none !important;
+            color: #4b4b4b;
+            }
+
+            caption, th 
+            {
+            text-align:left;
+            }
+
+            .tr-caption {
+            color:#212121;
+            text-align:center;
+            padding: 1em;
+            line-height: 1.38em;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            font-size:80%;
+            }
+
+            td.tr-caption {
+            font-size: 50%;
+            color:#5d5d5d;
+            font-style:italic;
+            }
+
+            /* Headings
+            ----------------------------------------------- */
+
+
+            h1, h2, h3, h4, h5, h6 {
+            font: normal bold IM Fell English
+            font-size:100%;
+            }
+
+            /* Cites
+            ----------------------------------------------- */
+            blockquote {
+            font: normal 22px IM Fell English;
+            color: #9b9b9b;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-left: 50px;
+            padding-left: 15px;
+            border-left: 3px solid #ccc;
+            border-right:1 px solid #ccc;
+            border-top:1 px solid #ccc;
+            border-bottom: 1 px solid #ccc;
+            }
+
+            blockquote > cite {
+            font: normal bold IM Fell English;
+            color: #8e8b8e;
+            font-size: 14px;
+            display: block;
+            margin-top: 5px;
+            }
+
+            blockquote > cite:before {
+            content: "\2014 \2009";
+            }
+
+            .mini {
+            float:left;
+            padding-right: 20px;
+            }
+
+            /* Widget Headings
+            ----------------------------------------------- */
+            div.widget > h2,
+            div.widget h2.title {
+            margin: 0 0 1em 0;
+            font: normal bold 11px IM Fell English;
+            color: #434343;
+            }
+
+            /* Widgets
+            ----------------------------------------------- */
+            #Navbar1 {
+            display:none!important;
+            }
+
+            .widget-content{
+            clear:both;
+            background-color:#fafafa;
+            }
+            ]]>
+
+        </b:skin>
+
+    </head>
+    <body>
+
+        <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+
+            <b:widget id='Navbar1' locked='true' title='Navigation' type='Navbar'/>
+
+        </b:section>
+
+        <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+
+            <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
+                <b:includable id='main'>
+                    <b:include name="title" data='blog'/>
+                </b:includable>
+
+                <b:includable id='title' var='b'>
+                    <data:b.title/><br/>
+                </b:includable>
+        </b:section>
+
+        <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
+
+            <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
+
+                <b:includable id='BlogElements' var='b'>
+                    <data:b.title/>
+                </b:includable>
+
+                <b:includable id='main' var='post'>
+                    <b:include name='Posts'/>
+                    <b:include name='nextprev'/>
+                </b:includable>
+
+
+                <b:includable id='labels' var='post'>
+                    <b:if cond='data:post.labels'>
+                        Libell&eacute;s :
+                        <b:loop values='data:post.labels' var='label'>
+                            <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                            <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
+                        </b:loop>
+                    </b:if>
+                </b:includable>
+
+                <b:includable id='shareButtons'/>
+                <b:includable id='mobile-nextprev'/>
+                <b:includable id='mobile-index-post'/>
+            </b:widget>
+        </b:section>
+
+        <b:section id='footer' class='footer' showaddelement="no">
+
+            <b:widget id='HTML1' locked='false' title='Copyright' type='HTML' />
+
+            <div class="copyright">
+                Copyright Alain Moreau &ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&eacute;serv&eacute;s
+            </div>
+            </b:widget>
+        </b:section>
+    </body>
+</html>
