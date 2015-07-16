@@ -1,22 +1,26 @@
 # Bansky Dellarte - Blogger Template
 
- Blogger Theme, a basic theme template for the Blogger publishing Platform.
- 
+ Blogger custom Theme, a basic theme template for the Blogger publishing Platform.
+
  ![](https://github.com/delfiramirez/blogger-theme/blob/master/assets/bansky-template.png)
- 
+
 #Case Study
 
-Template for publishing writings of editorial content concerning the fields of humanities, art and History. It arises from the need of the editor Mnsr. Alain Moreau, who signs as Bansky Dellarte. 
+A simple Template for publishing writings of editorial content concerning the fields of humanities, art and History.
 
-The projecte conveys to get, effectively, a diffusion of his writings through the social network Blogger.As the content to be published is focused on the academic and literate reader, we primacy the  appearance and concept of the book "as an object".
+The origin of this template arises from the will of the french critic and editor Mnsr. Alain Moreau, who signs as Bansky Dellarte.
 
-We wanted to mimic the structure of a classic newspaper written column. To this end, it has been carefully selected the fonts in use, the range of colours, and the spaces and characters between paragraphs; allowing the audience a pleasant reading focused on content, with a measured scroll interaction and without distractions.
+His project conveys to get, effectively, a diffusion of his writings through the social network Blogger. As the content is mean to be published and focused on the academic and literate reader, we primacy the appearance and concept of "the book as an object".
 
-The one-column concept leaves a division of spaces permit us to tailor and position text and images for different screen formats or devices.
+We wanted to mimic the structure of a classic newspaper written column. To reach this goal, it has been carefully selected the fonts in use, the range of colours, and the spaces and characters between paragraphs; allowing the intended audience to a pleasant reading focused on content, with the use and interaction of a measured scroll interaction, and without distractions.
 
-No comments allowed, and minimun widgets included by default.
+The one-column concept creates a share of spaces permitting us to tailor and position both text and images for the perfect fit into different screen formats or devices.
 
-Made in 2015.
+No comments allowed, and minimum widgets included by default.
+
+We guess you might find of use, if you like to write and publish for the Web.
+
+Made in 2015 with the technology of Blogger.
 
 #Use
 
