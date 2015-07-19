@@ -99,6 +99,19 @@
 
             </Group>
 
+            <Group description="Blog Title" selector=".header h1">
+                <Variable 
+                    name="header.font" 
+                    description="Font" 
+                    type="font"
+                    default="normal normal 60px IM Fell Great Primer" />
+                <Variable 
+                    name="header.text.color" 
+                    description="Title Color" 
+                    type="color" 
+                    default="#fbfbfb" />
+            </Group>
+
             <Group description="Links" selector=".main-outer">
 
                 <Variable 
@@ -381,6 +394,17 @@
             border-bottom: 1px solid #ccc;
             }
 
+
+            h1,
+            .title
+            {
+            font: normal 160% IM Fell English;
+            text-align:center;
+            vertical-align:middle;
+            word-wrap: break-word;
+            }
+
+
             /* Cites
             ----------------------------------------------- */
 
@@ -410,11 +434,15 @@
             }
 
             /* Structure
-            ----------------------------------------------- */    
+            ----------------------------------------------- */
 
-            .mini {
-            float:left;
-            padding-right: 20px;
+            .header-outer {
+            background: #fafafa url(//assets/gradients_light.png) repeat-x scroll 0 -400px;
+            }
+            .header-inner .Header .descriptionwrapper
+            {
+            padding: 40px 30px;
+            margin-bottom: 25px;
             }
 
             .titlewrapper {
@@ -424,6 +452,12 @@
             .descriptionwrapper {
             border-bottom: 3px solid #4a4a4a;
             }
+
+            .mini {
+            float:left;
+            padding-right: 20px;
+            }
+
 
             /* Widget Headings
             ----------------------------------------------- */
@@ -441,7 +475,11 @@
             #Navbar1 {
             display:none!important;
             }
-
+            .widget {
+            text-align:center;
+            vertical-align:middle;
+            }
+            
             .widget-content {
             clear:both;
             background-color:#fafafa;
@@ -459,63 +497,83 @@
 
         </b:section>
 
-        <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+        <div id='header-wrapper'>
 
-            <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
-
-                <b:includable id='main'>
-                    <b:include name="title" data='blog'/>
-                </b:includable>
-
-                <b:includable id='title' var='b'>
-                    <data:b.title/><br/>
-                </b:includable>
-
-            </b:widget>
-
-        </b:section>
-
-        <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
-
-            <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
-
-                <b:includable id='BlogElements' var='b'>
-                    <data:b.title/>
-                </b:includable>
-
-                <b:includable id='main' var='post'>
-                    <b:include name='Posts'/>
-                    <b:include name='nextprev'/>
-                </b:includable>
+            <div id='header-inner'>
 
 
-                <b:includable id='labels' var='post'>
-                    <b:if cond='data:post.labels'>
-                        Libell&amp;eacute;s :
-                        <b:loop values='data:post.labels' var='label'>
-                            <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
-                            <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
-                        </b:loop>
-                    </b:if>
-                </b:includable>
+                <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
 
-                <b:includable id='shareButtons'/>
-                <b:includable id='mobile-nextprev'/>
-                <b:includable id='mobile-index-post'/>
+                    <div class="titlewrapper">
 
-            </b:widget>
+                        <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
 
-        </b:section>
+                            <b:includable id='Header'>
+                                <b:include name="title" data='blog'/>
+                            </b:includable> 
 
-        <b:section id='footer' class='footer' showaddelement="no">
+                            <b:includable id='title' var='b'>
+                                <h1 class="title"><data:b.title/></h1>
+                            </b:includable> 
 
-            <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
+                            <b:includable id='description'>
+                                <div class='descriptionwrapper'>
+                                    <h4 class='description'>
+                                        <data:description/>
+                                    </h4>
+                                </div>
+                            </b:includable>
 
-                <div class="copyright">
-                    Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
-                </div>
+                        </b:widget>
+                    </div>
 
-            </b:widget>    
-        </b:section>
+                </b:section>
+            </div>
+        </div>
+        <div id='content-wrapper'>
+            <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
+
+                <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
+
+                    <b:includable id='BlogElements' var='b'>
+                        <data:b.title/>
+                    </b:includable>
+
+                    <b:includable id='main' var='post'>
+                        <b:include name='Posts'/>
+                        <b:include name='nextprev'/>
+                    </b:includable>
+
+
+                    <b:includable id='labels' var='post'>
+                        <b:if cond='data:post.labels'>
+                            Libell&amp;eacute;s :
+                            <b:loop values='data:post.labels' var='label'>
+                                <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
+                                <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
+                            </b:loop>
+                        </b:if>
+                    </b:includable>
+
+                    <b:includable id='shareButtons'/>
+                    <b:includable id='mobile-nextprev'/>
+                    <b:includable id='mobile-index-post'/>
+
+                </b:widget>
+
+            </b:section>
+
+            <b:section id='footer' class='footer' showaddelement="no">
+
+                <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
+
+                    <div class="copyright">
+                        Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
+                    </div>
+
+                </b:widget>    
+            </b:section>
+
+        </div>
     </body>
 </html>
