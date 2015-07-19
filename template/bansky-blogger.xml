@@ -2,10 +2,10 @@
 <!DOCTYPE html>
 <html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
     <head>
-            <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
-        <title>Page Non Trouve - <data:blog.title/></title>
-        <meta content='5;/' http-equiv='refresh'/>
-    </b:if>
+        <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
+            <title>Page Non Trouve - <data:blog.title/></title>
+            <meta content='5;/' http-equiv='refresh'/>
+        </b:if>
         <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
         <b:if cond='data:blog.isMobile'>
             <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
@@ -540,11 +540,15 @@
 
                 <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
 
-                    <b:includable id='BlogElements' var='b'>
+                    <b:includable id='BlogElements' var='post'>
                         <data:b.title/>
                     </b:includable>
 
+
                     <b:includable id='main' var='post'>
+                        <b:if cond='data:blog.pageType == "error_page"'>
+                            <b:include data='top' name='status-message'/>
+                        </b:if>
                         <b:include name='Posts'/>
                         <b:include name='nextprev'/>
                     </b:includable>
