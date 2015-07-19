@@ -488,6 +488,10 @@
             clear:both;
             background-color:#fafafa;
             }
+
+            .BlogArchive {
+            font-size: 70%;
+            }
             ]]>
 
         </b:skin>
@@ -518,7 +522,9 @@
                             </b:includable> 
 
                             <b:includable id='title' var='b'>
-                                <h1 class="title"><data:b.title/></h1>
+                                <h1 class="title">
+                                    <data:b.title/>
+                                </h1>
                             </b:includable> 
 
                             <b:includable id='description'>
@@ -538,14 +544,14 @@
         <div id='content-wrapper'>
             <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
 
-                <b:widget id='BlogArchive1' locked='false' title='Blog Archive' type='BlogArchive'>
+                <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Blog Archive' type='BlogArchive'>
 
                     <b:includable id='BlogElements' var='post'>
                         <data:b.title/>
                     </b:includable>
 
 
-                    <b:includable id='main' var='post'>
+                    <b:includable id='post' var='post'>
                         <b:if cond='data:blog.pageType == "error_page"'>
                             <b:include data='top' name='status-message'/>
                         </b:if>
