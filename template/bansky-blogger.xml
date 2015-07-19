@@ -497,10 +497,12 @@
         </b:skin>
 
         <script type='text/javascript'>
+           <![CDATA[
             if ( ( window.location.href.toString( ).indexOf( & #39; .com.fr / & #39; ) ) & gt; & #39; 1 & #39; )
-                    {
-                    window.location.href = window.location.href.toString( ).replace( & #39; .blogspot.com.fr / & #39; , & #39; .blogspot.com / ncr / & #39; );
-                            }
+            {
+            window.location.href = window.location.href.toString( ).replace( & #39; .blogspot.com.fr / & #39; , & #39; .blogspot.com / ncr / & #39; );
+            }
+            ]]>       
         </script>
 
     </head>
@@ -550,6 +552,8 @@
         </div>
         <div id='content-wrapper'>
             <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
+                
+                 <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'
 
                 <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Blog Archive' type='BlogArchive'>
 
@@ -576,12 +580,10 @@
                             </b:loop>
                         </b:if>
                     </b:includable>
-
-                    <b:includable id='shareButtons'/>
-                    <b:includable id='mobile-nextprev'/>
-                    <b:includable id='mobile-index-post'/>
-
                 </b:widget>
+                <b:includable id='shareButtons'/>
+                <b:includable id='mobile-nextprev'/>
+                <b:includable id='mobile-index-post'/>
 
             </b:section>
 
