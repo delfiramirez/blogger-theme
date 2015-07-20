@@ -80,6 +80,7 @@
                 value=""/>
 
             <Group description="Backgrounds"  selector=".body-outer">
+                
                 <Variable 
                     name="body.background.color" 
                     description="Outer Background" 
@@ -376,6 +377,7 @@
             li ul {
             margin-top:6px;
             }
+            
             ol ol li:last-child {
             margin-bottom:0;
             }
@@ -384,12 +386,19 @@
             ----------------------------------------------- */
 
 
-            h1, h2, h3, h4, h5, h6 {
+            h1, 
+            h2, 
+            h3, 
+            h4, 
+            h5, 
+            h6 {
             font: $(body.font);
             font-size:100%;
             }
 
-            h1,h2, h3 {
+            h1,
+            h2, 
+            h3 {
             color: #5b5b5b;
             margin: 0;
             padding: 1em;
@@ -458,7 +467,7 @@
             margin-bottom: 25px;
             }
 
-            .titlewrapper , 
+            .titlewrapper, 
             .descriptionwrapper {
             border-bottom: 3px solid #4a4a4a;
             }
