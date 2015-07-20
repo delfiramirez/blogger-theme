@@ -80,7 +80,7 @@
                 value=""/>
 
             <Group description="Backgrounds"  selector=".body-outer">
-                
+
                 <Variable 
                     name="body.background.color" 
                     description="Outer Background" 
@@ -105,19 +105,19 @@
             </Group>
 
             <Group description="Blog Title" selector=".header h1">
-                
+
                 <Variable 
                     name="header.font" 
                     description="Font" 
                     type="font"
                     default="normal normal 60px IM Fell Great Primer" />
-                
+
                 <Variable 
                     name="header.text.color" 
                     description="Title Color" 
                     type="color" 
                     default="#fbfbfb" />
-                
+
             </Group>
 
             <Group description="Links" selector=".main-outer">
@@ -377,7 +377,7 @@
             li ul {
             margin-top:6px;
             }
-            
+
             ol ol li:last-child {
             margin-bottom:0;
             }
@@ -462,10 +462,21 @@
             .header-outer {
             background: #fafafa url(//assets/gradients_light.png) repeat-x scroll 0 -400px;
             }
+            
             .header-inner .Header .descriptionwrapper {
             padding: 40px 30px;
             margin-bottom: 25px;
             }
+            
+            .Header h1 {
+  font: $(header.font);
+  color: $(header.text.color);
+  text-shadow: 2px 2px rgba(0, 0, 0, .1);
+}
+
+.Header h1 a {
+  color: $(header.text.color);
+}
 
             .titlewrapper, 
             .descriptionwrapper {
@@ -511,14 +522,7 @@
 
         </b:skin>
 
-        <script type='text/javascript'>
-           <![CDATA[
-            if ( ( window.location.href.toString( ).indexOf( & #39; .com.fr / & #39; ) ) & gt; & #39; 1 & #39; )
-            {
-            window.location.href = window.location.href.toString( ).replace( & #39; .blogspot.com.fr / & #39; , & #39; .blogspot.com / ncr / & #39; );
-            }
-            ]]>       
-        </script>
+        <script type='text/javascript' src="//assets/js/utils.js"></script>
 
     </head>
 
@@ -563,11 +567,12 @@
 
                 </b:section>
             </div>
+            <div style='clear: both'></div>
         </div>
         <div id='content-wrapper'>
             <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
-                
-                 <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' />
+
+                <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' />
 
                 <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Blog Archive' type='BlogArchive'>
 
@@ -600,17 +605,20 @@
                 <b:includable id='mobile-index-post'/>
 
             </b:section>
+        </div>
+        
+        <div style='clear: both'></div>
+        
+        <b:section id='footer' class='footer' showaddelement="no">
 
-            <b:section id='footer' class='footer' showaddelement="no">
+            <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
 
-                <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
+                <div class="copyright">
+                    Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
+                </div>
 
-                    <div class="copyright">
-                        Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
-                    </div>
-
-                </b:widget>    
-            </b:section>
+            </b:widget>    
+        </b:section>
 
         </div>
     </body>
