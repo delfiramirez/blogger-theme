@@ -533,6 +533,17 @@
             .BlogArchive {
             font-size: 70%;
             }
+            
+            .Text {           
+            text-align:center;
+            margin:0 auto;
+            padding:0,
+            }
+
+            .Text h2 {
+            font-size: 70;
+            color:#4b4b4b;
+            }
             ]]>
 
         </b:skin>
