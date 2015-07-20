@@ -104,16 +104,19 @@
             </Group>
 
             <Group description="Blog Title" selector=".header h1">
+                
                 <Variable 
                     name="header.font" 
                     description="Font" 
                     type="font"
                     default="normal normal 60px IM Fell Great Primer" />
+                
                 <Variable 
                     name="header.text.color" 
                     description="Title Color" 
                     type="color" 
                     default="#fbfbfb" />
+                
             </Group>
 
             <Group description="Links" selector=".main-outer">
@@ -222,7 +225,8 @@
             -webkit-text-size-adjust: auto;
             }
 
-            html, body {
+            html, 
+            body {
             margin:0;
             padding:0;
             word-wrap: true;
@@ -252,7 +256,10 @@
             -webkit-font-smoothing: antialiased;
             }
 
-            img, iframe, object, embed {
+            img, 
+            iframe, 
+            object, 
+            embed {
             max-width: 100%;
             width: auto\9;
             }
@@ -261,15 +268,18 @@
             clear:both;
             }
 
-            q:before, q:after {
+            q:before, 
+            q:after {
             content:'';
             }
 
-            abbr, acronym {
+            abbr, 
+            acronym {
             border:0;
             }
 
-            strong , b {
+            strong, 
+            b {
             font: $(body.font)
             font-style:bold;
             font-weight: bold;
@@ -288,7 +298,8 @@
             color: #4b4b4b;
             }
 
-            caption, th {
+            caption,
+            th {
             text-align:left;
             }
 
@@ -398,7 +409,6 @@
             border-bottom: 1px solid #ccc;
             }
 
-
             h1,
             .title
             {
@@ -443,16 +453,12 @@
             .header-outer {
             background: #fafafa url(//assets/gradients_light.png) repeat-x scroll 0 -400px;
             }
-            .header-inner .Header .descriptionwrapper
-            {
+            .header-inner .Header .descriptionwrapper {
             padding: 40px 30px;
             margin-bottom: 25px;
             }
 
-            .titlewrapper {
-            border-bottom: 3px solid #4a4a4a;
-            }
-
+            .titlewrapper , 
             .descriptionwrapper {
             border-bottom: 3px solid #4a4a4a;
             }
@@ -519,7 +525,6 @@
 
             <div id='header-inner'>
 
-
                 <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
 
                     <div class="titlewrapper">
@@ -553,7 +558,7 @@
         <div id='content-wrapper'>
             <b:section id='main' class="main" maxwidgets='' showaddelements='yes'>
                 
-                 <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog'
+                 <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' />
 
                 <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Blog Archive' type='BlogArchive'>
 
