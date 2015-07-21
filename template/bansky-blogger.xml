@@ -597,11 +597,9 @@
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
         <script type='text/javascript' src="//assets/js/utils.js"></script>
 
-
     </head>
 
     <body>
-
 
         <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
 
@@ -621,58 +619,68 @@
         <div class='content-outer'>
 
             <div id='header-wrapper'>
-                
+
                 <header role="banner">
 
-                <div id='header-inner'>
+                    <div id='header-inner'>
 
-                    <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+                        <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
 
-                        <div class="titlewrapper">
+                            <div class="titlewrapper">
 
-                            <b:widget id='wHeader' locked='false' title='Blog Title' type='Header'>
+                                <b:widget id='wHeader' locked='false' title='Title' type='Header'>
 
-                                <b:includable id='Header'>
-                                    <b:include name="title" data='blog'/>
-                                </b:includable> 
+                                    <b:includable id='Header'>
+                                        <b:include name="title" data='blog'/>
+                                    </b:includable> 
 
-                                <b:includable id='title' var='b'>
-                                    <h1 class="title">
-                                        <data:b.title/>
-                                    </h1>
-                                </b:includable> 
+                                    <b:includable id='title' var='b'>
 
-                                <b:includable id='description'>
-                                    <div class='descriptionwrapper'>
-                                        <h4 class='description'>
-                                            <data:description/>
-                                        </h4>
-                                    </div>
-                                </b:includable>
+                                        <h1 class="title">
+                                            <a expr:href="data:blog.homepageUrl">
+                                                <data:title />
+                                            </a>
+                                        </h1>
 
-                            </b:widget>
+                                    </b:includable> 
 
-                        </div>
+                                    <b:includable id='description'>
 
-                    </b:section>
+                                        <div class='descriptionwrapper'>
+                                            <h4 class='description'>
+                                                <data:description/>
+                                            </h4>
+                                        </div>
 
-                </div>
-                    
+                                    </b:includable>
+
+                                </b:widget>
+
+                            </div>
+
+                        </b:section>
+
+                    </div>
+
                 </header>
-                
+
             </div>
 
-            <div style='clear: both'></div>
+            <div style='clear: both' />
 
             <div id='content-wrapper'>
 
                 <b:section id='main' class="main" maxwidgets='' showaddelements='yes' growth="vertical">
 
-                    <b:widget id='Blog1' locked='false' title='Blog Posts' type='Blog' />
+                    <b:widget id='Blog1' locked='false' title='Articles' type='Blog'>
+
+                        <!-- TO DO -->
+                        
+                    </b:widget>
 
                     <div role="complementary">
 
-                        <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Blog Archive' type='BlogArchive'>
+                        <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Archive Du Blog' type='BlogArchive'>
 
                             <b:includable id='BlogElements' var='post'>
                                 <data:b.title/>
@@ -695,7 +703,7 @@
                                     </b:loop>
                                 </b:if>
                             </b:includable>
-                            
+
                         </b:widget>
                     </div>
                     <b:includable id='shareButtons'/>
@@ -704,22 +712,22 @@
                 </b:section>
             </div>
 
-            <div style='clear: both'></div>
+            <div style='clear: both' />
 
             <footer id="footer" role="contentinfo">
 
                 <b:section id='footer' class='footer' showaddelement="no">
 
-                    <b:widget id='HTML1' locked='false' title='Copyright' type='HTML'>
+                    <b:widget id="HTML1" locked="false" title="Droit d\'Auteur" type="HTML">
 
                         <div class="copyright">
                             Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
                         </div>
 
-                    </b:widget>    
+                    </b:widget>   
+                    
                 </b:section>
             </footer>
         </div>
-
     </body>
 </html>
