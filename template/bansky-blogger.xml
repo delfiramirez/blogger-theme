@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'>
-    <head>
+<html b:version='2'
+	xmlns='http://www.w3.org/1999/xhtml' 
+	xmlns:b='http://www.google.com/2005/gml/b' 
+	xmlns:data='http://www.google.com/2005/gml/data' 
+	xmlns:expr='http://www.google.com/2005/gml/expr' 
+	xmlns:og='http://opengraphprotocol.org/schema/'
+	expr:dir='data:blog.languageDirection' 
+	lang='fr'
+	class='v2 no-js'>
+<head>
         <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
             <title>Page Non Trouve - <data:blog.title/></title>
             <meta content='5;/' http-equiv='refresh'/>
         </b:if>
         <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+        <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
         <b:if cond='data:blog.isMobile'>
             <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
             <b:else/>
@@ -18,7 +27,34 @@
             <b:else/>
             <meta expr:content='data:blog.pageName' name='description' property='og:description'/>
         </b:if>
-
+        
+	<b:if cond='data:blog.pageType == "archive"'>
+		<meta content='noindex,nofollow' name='robots'/>
+	<b:else />
+		<b:if cond='data:blog.pageType == "error_page"'>
+			<meta content='noindex,nofollow' name='robots'/>
+		<b:else />
+			<b:if cond='data:blog.pageType == "index"'>
+				<b:if cond='data:blog.homepageUrl == data:blog.url'>
+					<meta content='index,follow' name='robots'/>
+				<b:else/>
+					<meta content='noindex,nofollow' name='robots'/>
+				</b:if>
+			<b:else />
+				<meta content='index,follow' name='robots'/>
+			</b:if>
+		</b:if>
+	</b:if>
+	
+	<b:if cond='data:blog.pageType == "item"'>
+		<b:if cond='data:blog.newerPageUrl'>
+			<link expr:href='data:blog.newerPageUrl' rel='next'/>
+		</b:if>
+		<b:if cond='data:blog.olderPageUrl'>
+			<link expr:href='data:blog.olderPageUrl' rel='prev'/>
+		</b:if>
+	</b:if>
+	
         <b:include data='blog' name='all-head-content'/>
 
         <title>
@@ -593,7 +629,17 @@
             href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic' 
             rel='stylesheet' 
             type='text/css' />
-
+            
+	<!--[if IE 8]>
+		<script type='text/javascript'>document.documentElement.className += ' ie8 lt-ie9'</script>
+	<![endif]-->
+	<!--[if IE 7]>
+		<script type='text/javascript'>document.documentElement.className += ' ie7 lt-ie8 lt-ie9'</script>
+	<![endif]-->
+	<!--[if lt IE 7]>
+		<script type='text/javascript'>document.documentElement.className += ' ie6 lt-ie7 lt-ie8 lt-ie9'</script>
+	<![endif]-->
+	
         <script type="text/javascript" src="http://www.google.com/jsapi"></script>
         <script type='text/javascript' src="//assets/js/utils.js"></script>
 
