@@ -13,13 +13,20 @@ if (!Array.indexOf)
 
 // custom domain
 
-if ((window.location.href.toString().indexOf(&#39;.com.fr/&#39;))&gt;&#39;1&#39;)
-{
-window.location.href=window.location.href.toString().replace(&#39;.blogspot.com.fr/&#39;, &#39;.blogspot.com/ncr/&#39;);
-}
-
-else {
-log ();
+	(function(){
+			var URL = document.URL,
+			
+			      	reg = /\.blogspot\.(com\...|..)\//
+				
+			if( URL.match( reg ) )
+			{
+				window.location = URL.replace( reg, ".blogspot.com\/ncr\/" )
+			}
+			else {
+			        log ();
+			}
+		})()
+		document.documentElement.className = document.documentElement.className.replace('no-js', 'js');
 }
 
 // load Fonts
