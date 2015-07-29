@@ -157,7 +157,7 @@
 
             </Group>
 
-            <Group description="Links" selector=".main-outer">
+            <Group description="Links" selector=".main-inner">
 
                 <Variable 
                     name="link.color" 
@@ -685,7 +685,7 @@
                         
                     </b:widget>
 
-                    <div role="complementary">
+                    <div class="main-inner" role="complementary">
 
                         <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Archive Du Blog' type='BlogArchive'>
 
