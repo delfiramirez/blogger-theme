@@ -477,7 +477,7 @@
 
             .header-inner .Header .titlewrapper {
             padding: 22px 30px;
-	   backgroound: $(header.background.color);
+	    backgroound: $(header.background.color);
             }
 
             .header-inner .Header .descriptionwrapper {
@@ -525,6 +525,7 @@
             #Navbar1 {
             display:none!important;
             }
+            
             .widget {
             text-align:center;
             vertical-align:middle;
