@@ -3,6 +3,8 @@
  Blogger custom Theme, a basic theme template for the Blogger publishing Platform.
 
  ![](https://github.com/delfiramirez/blogger-theme/blob/master/assets/bansky-template.png)
+ 
+ -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 #Case Study
 
