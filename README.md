@@ -10,9 +10,9 @@
 
 A simple Template for publishing writings of editorial content concerning the fields of humanities, art and History.
 
-The origin of this template arises from the will of the french critic and editor Mnsr. Alain Moreau, who signs as Bansky Dellarte.
+The origin of this template arises from the will of the french critic and editor M. Alain Moreau, who signs as Bansky Dellarte.
 
-His project conveys to get in an effective manner a diffusion of his writings through the social network Blogger. As the content is meant to be published and is focused on the academic and the literate reader, we took primacy over the appearance and concept of "the book as an object".
+His project conveys to get in an effective manner a diffusion of his writings as a pamphlet through the social network Blogger. As the content is meant to be published and is focused on the academic and the literate reader, we took primacy over the appearance and concept of "the book as an object".
 
 We wanted to mimic the structure of a classic newspaper written column. To reach this goal, we carefully selected the fonts in use, the range of colours, and the spaces and characters between paragraphs; allowing to the intended audience  a pleasant reading, focused on content, with the use and interaction of a measured scroll interaction, and without distractions.
 
