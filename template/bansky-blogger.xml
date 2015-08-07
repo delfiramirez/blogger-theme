@@ -396,7 +396,6 @@
             /* Headings
             ----------------------------------------------- */
 
-
             h1, 
             h2, 
             h3, 
@@ -581,6 +580,63 @@
             .wf-active h3 { 
             font-family: 'IM Fell English', serif;
             font-size: 120%;
+            }
+	    
+	    
+            #cookieChoiceInfo,
+            .singleton-element {
+            position: fixed;
+            width: 100%;
+            background-color:#fafafa !important;
+            margin-top: 10px !important;
+            left: 0px;
+            top: 0px !important;
+            padding: 0px;
+            z-index: 4000;
+            text-align: center;
+            font-size: 14px !important;
+            font-weight: normal !important;
+            color: #4b4b4b !important;
+            line-height: 160% !important;
+            border-top: 3px solid #4b4b4b;
+            border-bottom: 1px dotted #4b4b4b;
+            }
+
+            .cookie-choices-info .cookie-choices-text {
+            line-height: 1.5em !important;
+            }
+
+            .cookie-choices-info .cookie-choices-button {
+            font-weight: bold;
+            text-transform: capitalize !important;
+            white-space: nowrap;
+            color: #eee;
+            margin-left: 8px;
+            padding: 0 6px;
+            text-decoration: none;
+            }
+
+            .cookie-choices-info .cookie-choices-buttons {
+            display: inline-block;
+            vertical-align: middle;
+            white-space: nowrap;
+            float: right !important;
+            width: 40% !important;
+            margin: 0 10px;
+            }
+
+            .cookie-choices-buttons {
+            width: 40% !important;
+            float:right !important;
+            }
+
+            .singleton-element span {
+            font: 100% ;
+            width: 50% !important;
+            float: left !important;
+            text-align: left !important;
+            margin: 10px !important;
+            color: #4b4b4b !important;
             }
 
             ]]>
