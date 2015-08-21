@@ -1,797 +1,653 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html>
 <html b:version='2'
-	xmlns='http://www.w3.org/1999/xhtml' 
-	xmlns:b='http://www.google.com/2005/gml/b' 
-	xmlns:data='http://www.google.com/2005/gml/data' 
-	xmlns:expr='http://www.google.com/2005/gml/expr' 
-	xmlns:og='http://opengraphprotocol.org/schema/'
-	expr:dir='data:blog.languageDirection' 
-	lang='fr'
-	class='no-js'>
-<head>
-        <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
-            <title>Page Non Trouve - <data:blog.title/></title>
-            <meta content='5;/' http-equiv='refresh'/>
-        </b:if>
-        <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
-        <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
-        <b:if cond='data:blog.isMobile'>
-            <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+      xmlns='http://www.w3.org/1999/xhtml' 
+      xmlns:b='http://www.google.com/2005/gml/b' 
+      xmlns:data='http://www.google.com/2005/gml/data' 
+      xmlns:expr='http://www.google.com/2005/gml/expr' 
+      xmlns:og='http://opengraphprotocol.org/schema/'
+      expr:dir='data:blog.languageDirection' 
+      lang='fr'
+      class='no-js'>
+  <head>
+    <b:if cond='data:blog.pageType == &quot;error_page&quot;'>
+      <title>
+        Page Non Trouve - 
+        <data:blog.title/>
+      </title>
+      <meta content='5;/' http-equiv='refresh'/>
+    </b:if>
+    <meta content='IE=EmulateIE7' http-equiv='X-UA-Compatible'/>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'/>
+    <b:if cond='data:blog.isMobile'>
+      <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport'/>
+      <b:else/>
+      <meta content='width=1100' name='viewport'/>
+    </b:if>
+    <b:if cond='data:blog.metaDescription'>
+      <meta expr:content='data:blog.metaDescription' name='description' property='og:description'/>
+      <b:else/>
+      <meta expr:content='data:blog.pageName' name='description' property='og:description'/>
+    </b:if>
+    <b:if cond='data:blog.pageType == "archive"'>
+      <meta content='noindex,nofollow' name='robots'/>
+      <b:else />
+      <b:if cond='data:blog.pageType == "error_page"'>
+        <meta content='noindex,nofollow' name='robots'/>
+        <b:else />
+        <b:if cond='data:blog.pageType == "index"'>
+          <b:if cond='data:blog.homepageUrl == data:blog.url'>
+            <meta content='index,follow' name='robots'/>
             <b:else/>
-            <meta content='width=1100' name='viewport'/>
+            <meta content='noindex,nofollow' name='robots'/>
+          </b:if>
+          <b:else />
+          <meta content='index,follow' name='robots'/>
         </b:if>
-
+      </b:if>
+    </b:if>
+    <b:if cond='data:blog.pageType == "item"'>
+      <b:if cond='data:blog.newerPageUrl'>
+        <link expr:href='data:blog.newerPageUrl' rel='next'/>
+      </b:if>
+      <b:if cond='data:blog.olderPageUrl'>
+        <link expr:href='data:blog.olderPageUrl' rel='prev'/>
+      </b:if>
+    </b:if>
+    <b:include data='blog' name='all-head-content'/>
+    <title>
+      <b:if cond='data:blog.pageType == &quot;index&quot;'>
+        <data:blog.pageTitle/>
+        <b:else/>
+        <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
+          <data:blog.pageName/>
+          | 
+          <data:blog.title/>
+          <b:else/>
+          Article non trouv&amp;eacute; | 
+          <data:blog.title/>
+        </b:if>
+      </b:if>
+    </title>
+    <b:skin>
+      <![CDATA[
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     BansKy Dellarte
+Designer:  Delfi Ramirez
+URL:      www.segonquart.net
+-----------------------------------------------
+*/
+/* Variable definitions
+----------------------------------------------- */
+<Group description="Page Text" selector="body">
+<Variable 
+name="body.font" 
+description="Font" type="font"
+default="normal normal 12px IM Fell English" 
+value="normal bold 12px IM Fell English"/>
+<Variable 
+name="body.text.color" 
+description="Text Color" type="color" 
+default="#020202" 
+value="#020202"/>
+</Group>
+<Variable 
+name="body.background" 
+description="Body Background" 
+type="background"
+color="$(body.background.color)" 
+default="$(color) none repeat scroll top left" 
+value="$(color) none repeat scroll top left"/>
+<Variable 
+name="body.background.override" 
+description="Body Background Override" 
+type="string" 
+default="" 
+value=""/>
+<Group description="Backgrounds"  selector=".body-outer">
+<Variable 
+name="body.background.color" 
+description="Outer Background" 
+type="color" 
+default="#fafafa" 
+value="#fafafa"/>
+<Variable 
+name="content.background.color" 
+description="Main Background" 
+type="color" 
+default="#ffffff" 
+value="#ffffff"/>
+<Variable 
+name="header.background.color" 
+description="Header Background" 
+type="color" 
+default="transparent" 
+value="#fafafa"/>
+</Group>
+<Group description="Blog Title" selector=".header h1">
+<Variable 
+name="header.font" 
+description="Font" 
+type="font"
+default="normal normal 60px IM Fell Great Primer" />
+<Variable 
+name="header.text.color" 
+description="Title Color" 
+type="color" 
+default="#fbfbfb" />
+</Group>
+<Group description="Links" selector=".main-inner">
+<Variable 
+name="link.color" 
+description="Link Color" 
+type="color" 
+default="#0c343d" 
+value="#0c343d"/>
+<Variable 
+name="link.visited.color" 
+description="Visited Color" 
+type="color" 
+default="#073763" 
+value="#073763"/>
+<Variable 
+name="link.hover.color" 
+description="Hover Color" 
+type="color" 
+default="#0c343d" 
+value="#0c343d"/>
+</Group>
+<Group description="Images" selector=".main">
+<Variable 
+name="image.background.color" 
+description="Background Color" 
+type="color" default="#ffffff" 
+value="#ffffff"/>
+<Variable 
+name="image.border.color" 
+description="Border Color" 
+type="color" 
+default="#eeeeee" 
+value="#eeeeee"/>
+<Variable 
+name="image.text.color" 
+description="Caption Text Color" 
+type="color" 
+default="$(body.text.color)" 
+value="$(body.text.color)"/>
+</Group>
+*/
+/* CSS Style
+----------------------------------------------- */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+margin:0;
+padding:0;
+}
+*, *:before, *:after {
+-webkit-text-size-adjust: auto;
+}
+html, 
+body {
+margin:0;
+padding:0;
+word-wrap: true;
+}
+body {
+background: $(body.background);
+color:$(body.text.color);
+min-height: 100%;
+height:auto !important;
+height: 100%;
+margin: 0;
+padding: 0;
+font-size:16px;
+font-size: 1.52rem;
+line-height:20px;
+line-height:2rem;
+font-weight:300;
+}
+div {
+text-rendering: optimizeLegibility;
+text-justify: inter-word;
+line-height:1.6em;
+word-wrap: break-word;
+-webkit-justify-content: space-around;
+-webkit-font-smoothing: antialiased;
+}
+img, 
+iframe, 
+object, 
+embed {
+max-width: 100%;
+width: auto\9;
+background:$(image.background.color);
+border: 1px dotted $(image.border.color);
+}
+hr     {
+clear:both;
+}
+q:before, 
+q:after {
+content:'';
+}
+abbr, 
+acronym {
+border:0;
+}
+strong, 
+b {
+font: $(body.font)
+font-style:bold;
+font-weight: bold;
+}
+a:link {
+text-decoration:none;
+color: $(link.color);
+}
+a:visited {
+text-decoration:none;
+color: $(link.visited.color);
+}
+a:hover {
+text-decoration:underline;
+color: $(link.hover.color);
+}
+/* Table Content
+----------------------------------------------- */
+table {
+border-collapse:collapse;
+border-spacing:0;
+}
+tbody {
+border: none !important;
+color: #4b4b4b;
+}
+caption,
+th {
+text-align:left;
+}
+.tr-caption {
+color:#212121;
+text-align:center;
+padding: 1em;
+line-height: 1.38em;
+border-top: 1px solid #ccc;
+border-bottom: 1px solid #ccc;
+font-size:80%;
+}
+td.tr-caption {
+font-size: 50%;
+color:#5d5d5d;
+font-style:italic;
+}
+/* Lists
+----------------------------------------------- */
+ol {
+list-style-type: decimal;
+list-style-position: inside;
+padding: .6em;
+margin-left: 50px;
+padding-left: 15px;
+}
+ol li {
+margin-left : 10px;
+text-align:justify;
+}
+// 456bereastreet.com
+ol {
+counter-reset:li; 
+margin-left:10px; 
+padding-left:0; 
+font-size: 80%;
+}
+ol > li {
+position:relative;
+margin:10px 0 10px 2em;
+padding:2px 8px;
+list-style:none;
+line-height: 2em;
+border-bottom: 2px solid #ededed;
+}
+ol > li:before {
+content:counter(li);
+counter-increment:li;
+position:absolute;
+top:-2px;
+left:-2em;
+-moz-box-sizing:border-box;
+-webkit-box-sizing:border-box;
+box-sizing:border-box;
+width:2em;
+margin-left:8px;
+padding:1px;
+color:#4b4b4b;
+font-weight:bold;
+text-align:center;
+}
+//end
+li ol,
+li ul {
+margin-top:6px;
+}
+ol ol li:last-child {
+margin-bottom:0;
+}
+/* Headings
+----------------------------------------------- */
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6 {
+font: $(body.font);
+font-size:100%;
+}
+h1,
+h2, 
+h3 {
+color: #5b5b5b;
+margin: 0;
+padding: 1em;
+font-size: 130%;
+line-height: 1.2em;
+font: $(body.font)
+text-align:justify;
+text-overflow: ellipsis;
+word-wrap:true;
+}
+h4 {
+font: normal 70% IM Fell English;
+text-align:center;
+vertical-align:middle;
+word-wrap: break-word;
+border-bottom: 1px solid #ccc;
+}
+h1,
+.title
+{
+font: normal 160% IM Fell English;
+text-align:center;
+vertical-align:middle;
+word-wrap: break-word;
+}
+/* Cites
+----------------------------------------------- */
+blockquote {
+font: normal 22px IM Fell English;
+color: #9b9b9b;
+margin-top: 10px;
+margin-bottom: 10px;
+margin-left: 50px;
+padding-left: 15px;
+border-left: 3px solid #ccc;
+border-right:1 px solid #ccc;
+border-top:1 px solid #ccc;
+border-bottom: 1 px solid #ccc;
+}
+blockquote > cite {
+font: $(body.font);
+color: #8e8b8e;
+font-size: 14px;
+display: block;
+margin-top: 5px;
+}
+blockquote > cite:before {
+content: "\2014 \2009";
+}
+/* Structure
+----------------------------------------------- */
+.header-outer {
+background: #fafafa url(//assets/gradients_light.png) repeat-x scroll 0 -400px;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+backgroound: $(header.background.color);
+}
+.header-inner .Header .descriptionwrapper {
+padding: 40px 30px;
+margin-bottom: 25px;
+}
+.Header h1 {
+font: $(header.font);
+color: $(header.text.color);
+text-shadow: 2px 2px rgba(0, 0, 0, .1);
+}
+.Header h1 a {
+color: $(header.text.color);
+}
+.titlewrapper, 
+.descriptionwrapper {
+border-bottom: 3px solid #4a4a4a;
+}
+.mini {
+float:left;
+padding-right: 20px;
+}
+/* Articles
+----------------------------------------------- */
+/* Widget Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 11px IM Fell English;
+color: #434343;
+}
+/* Widgets
+----------------------------------------------- */
+#Navbar1 {
+display:none!important;
+}
+.widget {
+text-align:center;
+vertical-align:middle;
+}
+.widget-content {
+clear:both;
+background-color:#fafafa;
+}
+.BlogArchive {
+font-size: 70%;
+}
+.Text {           
+text-align:center;
+margin:0 auto;
+padding:0,
+}
+.Text h2 {
+font-size: 70;
+color:#4b4b4b;
+}
+/* Async WebFonts
+----------------------------------------------- */
+.wf-inactive p {
+font-family: serif
+}
+.wf-active p { 
+font-family: 'IM Fell English', serif;
+}
+.wf-inactive h1 { 
+font-family: serif;
+font-size: 160%;
+}
+.wf-active h1 { 
+font-family: 'IM Fell English', serif;
+font-size: 160%;
+}
+.wf-inactive h3 { 
+font-family: serif;
+font-size: 120%;
+}
+.wf-active h3 { 
+font-family: 'IM Fell English', serif;
+font-size: 120%;
+}
+#cookieChoiceInfo,
+.singleton-element {
+position: fixed;
+width: 100%;
+background-color:#fafafa !important;
+margin-top: 10px !important;
+left: 0px;
+top: 0px !important;
+padding: 0px;
+z-index: 4000;
+text-align: center;
+font-size: 14px !important;
+font-weight: normal !important;
+color: #4b4b4b !important;
+line-height: 160% !important;
+border-top: 3px solid #4b4b4b;
+border-bottom: 1px dotted #4b4b4b;
+}
+.cookie-choices-info .cookie-choices-text {
+line-height: 1.5em !important;
+}
+.cookie-choices-info .cookie-choices-button {
+font-weight: bold;
+text-transform: capitalize !important;
+white-space: nowrap;
+color: #eee;
+margin-left: 8px;
+padding: 0 6px;
+text-decoration: none;
+}
+.cookie-choices-info .cookie-choices-buttons {
+display: inline-block;
+vertical-align: middle;
+white-space: nowrap;
+float: right !important;
+width: 40% !important;
+margin: 0 10px;
+}
+.cookie-choices-buttons {
+width: 40% !important;
+float:right !important;
+}
+.singleton-element span {
+font: 100% ;
+width: 50% !important;
+float: left !important;
+text-align: left !important;
+margin: 10px !important;
+color: #4b4b4b !important;
+}
+]]>
+    </b:skin>
+    <link 
+          href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic' 
+          rel='stylesheet' 
+          type='text/css' />
+    <!--[if IE 8]>
+<script type='text/javascript'>document.documentElement.className += ' ie8 lt-ie9'</script>
+<![endif]-->
+    <!--[if IE 7]>
+<script type='text/javascript'>document.documentElement.className += ' ie7 lt-ie8 lt-ie9'</script>
+<![endif]-->
+    <!--[if lt IE 7]>
+<script type='text/javascript'>document.documentElement.className += ' ie6 lt-ie7 lt-ie8 lt-ie9'</script>
+<![endif]-->
+    <script type="text/javascript" src="http://www.google.com/jsapi">
+    </script>
+    <script type='text/javascript' src="//assets/js/utils.js">
+    </script>
+    <b:include data='blog' name='google-analytics'/>
+  </head>
+  <body>
+    <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
+      <b:widget id='Navbar1' locked='true' title='Navigation' type='Navbar'/>
+    </b:section>
+    <b:if cond='data:blog.pageType == &quot;index&quot;'>
+      <div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
+        <meta expr:content='data:blog.title' itemprop='name'/>
         <b:if cond='data:blog.metaDescription'>
-            <meta expr:content='data:blog.metaDescription' name='description' property='og:description'/>
-            <b:else/>
-            <meta expr:content='data:blog.pageName' name='description' property='og:description'/>
+          <meta expr:content='data:blog.metaDescription' itemprop='description'/>
         </b:if>
-        
-	<b:if cond='data:blog.pageType == "archive"'>
-		<meta content='noindex,nofollow' name='robots'/>
-	<b:else />
-		<b:if cond='data:blog.pageType == "error_page"'>
-			<meta content='noindex,nofollow' name='robots'/>
-		<b:else />
-			<b:if cond='data:blog.pageType == "index"'>
-				<b:if cond='data:blog.homepageUrl == data:blog.url'>
-					<meta content='index,follow' name='robots'/>
-				<b:else/>
-					<meta content='noindex,nofollow' name='robots'/>
-				</b:if>
-			<b:else />
-				<meta content='index,follow' name='robots'/>
-			</b:if>
-		</b:if>
-	</b:if>
-	
-	<b:if cond='data:blog.pageType == "item"'>
-		<b:if cond='data:blog.newerPageUrl'>
-			<link expr:href='data:blog.newerPageUrl' rel='next'/>
-		</b:if>
-		<b:if cond='data:blog.olderPageUrl'>
-			<link expr:href='data:blog.olderPageUrl' rel='prev'/>
-		</b:if>
-	</b:if>
-	
-        <b:include data='blog' name='all-head-content'/>
-
-        <title>
-            <b:if cond='data:blog.pageType == &quot;index&quot;'>
-                <data:blog.pageTitle/>
-                <b:else/>
-                <b:if cond='data:blog.pageType != &quot;error_page&quot;'>
-                    <data:blog.pageName/> | <data:blog.title/>
-                    <b:else/>
-                    Article non trouv&amp;eacute; | <data:blog.title/>
-                </b:if>
-            </b:if>
-        </title>
-
-
-        <b:skin>
-
-            <![CDATA[
-            /*
-            -----------------------------------------------
-            Blogger Template Style
-            Name:     BansKy Dellarte
-            Designer:  Delfi Ramirez
-            URL:      www.segonquart.net
-            -----------------------------------------------
-            */
-
-            /* Variable definitions
-            ----------------------------------------------- */
-
-            <Group description="Page Text" selector="body">
-
-                <Variable 
-                    name="body.font" 
-                    description="Font" type="font"
-                    default="normal normal 12px IM Fell English" 
-                    value="normal bold 12px IM Fell English"/>
-
-                <Variable 
-                    name="body.text.color" 
-                    description="Text Color" type="color" 
-                    default="#020202" 
-                    value="#020202"/>
-
-            </Group>
-
-            <Variable 
-                name="body.background" 
-                description="Body Background" 
-                type="background"
-                color="$(body.background.color)" 
-                default="$(color) none repeat scroll top left" 
-                value="$(color) none repeat scroll top left"/>
-
-            <Variable 
-                name="body.background.override" 
-                description="Body Background Override" 
-                type="string" 
-                default="" 
-                value=""/>
-
-            <Group description="Backgrounds"  selector=".body-outer">
-
-                <Variable 
-                    name="body.background.color" 
-                    description="Outer Background" 
-                    type="color" 
-                    default="#fafafa" 
-                    value="#fafafa"/>
-
-                <Variable 
-                    name="content.background.color" 
-                    description="Main Background" 
-                    type="color" 
-                    default="#ffffff" 
-                    value="#ffffff"/>
-
-                <Variable 
-                    name="header.background.color" 
-                    description="Header Background" 
-                    type="color" 
-                    default="transparent" 
-                    value="#fafafa"/>
-
-            </Group>
-
-            <Group description="Blog Title" selector=".header h1">
-
-                <Variable 
-                    name="header.font" 
-                    description="Font" 
-                    type="font"
-                    default="normal normal 60px IM Fell Great Primer" />
-
-                <Variable 
-                    name="header.text.color" 
-                    description="Title Color" 
-                    type="color" 
-                    default="#fbfbfb" />
-
-            </Group>
-
-            <Group description="Links" selector=".main-inner">
-
-                <Variable 
-                    name="link.color" 
-                    description="Link Color" 
-                    type="color" 
-                    default="#0c343d" 
-                    value="#0c343d"/>
-
-                <Variable 
-                    name="link.visited.color" 
-                    description="Visited Color" 
-                    type="color" 
-                    default="#073763" 
-                    value="#073763"/>
-
-                <Variable 
-                    name="link.hover.color" 
-                    description="Hover Color" 
-                    type="color" 
-                    default="#0c343d" 
-                    value="#0c343d"/>
-
-            </Group>
-
-            <Group description="Images" selector=".main">
-
-                <Variable 
-                    name="image.background.color" 
-                    description="Background Color" 
-                    type="color" default="#ffffff" 
-                    value="#ffffff"/>
-
-                <Variable 
-                    name="image.border.color" 
-                    description="Border Color" 
-                    type="color" 
-                    default="#eeeeee" 
-                    value="#eeeeee"/>
-
-                <Variable 
-                    name="image.text.color" 
-                    description="Caption Text Color" 
-                    type="color" 
-                    default="$(body.text.color)" 
-                    value="$(body.text.color)"/>
-
-            </Group>
-
-            */
-
-            /* CSS Style
-            ----------------------------------------------- */
-
-            body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
-            margin:0;
-            padding:0;
-            }
-
-            *, *:before, *:after {
-            -webkit-text-size-adjust: auto;
-            }
-
-            html, 
-            body {
-            margin:0;
-            padding:0;
-            word-wrap: true;
-            }
-
-            body {
-            background: $(body.background);
-            color:$(body.text.color);
-            min-height: 100%;
-            height:auto !important;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            font-size:16px;
-            font-size: 1.52rem;
-            line-height:20px;
-            line-height:2rem;
-            font-weight:300;
-            }
-
-            div {
-            text-rendering: optimizeLegibility;
-            text-justify: inter-word;
-            line-height:1.6em;
-            word-wrap: break-word;
-            -webkit-justify-content: space-around;
-            -webkit-font-smoothing: antialiased;
-            }
-
-            img, 
-            iframe, 
-            object, 
-            embed {
-            max-width: 100%;
-            width: auto\9;
-	   background:$(image.background.color);
-	   border: 1px dotted $(image.border.color);
-            }
-
-            hr     {
-            clear:both;
-            }
-
-            q:before, 
-            q:after {
-            content:'';
-            }
-
-            abbr, 
-            acronym {
-            border:0;
-            }
-
-            strong, 
-            b {
-            font: $(body.font)
-            font-style:bold;
-            font-weight: bold;
-            }
-
-            a:link {
-            text-decoration:none;
-            color: $(link.color);
-            }
-
-            a:visited {
-            text-decoration:none;
-            color: $(link.visited.color);
-            }
-
-            a:hover {
-            text-decoration:underline;
-            color: $(link.hover.color);
-            }
-
-            /* Table Content
-            ----------------------------------------------- */
-
-            table {
-            border-collapse:collapse;
-            border-spacing:0;
-            }
-
-            tbody {
-            border: none !important;
-            color: #4b4b4b;
-            }
-
-            caption,
-            th {
-            text-align:left;
-            }
-
-            .tr-caption {
-            color:#212121;
-            text-align:center;
-            padding: 1em;
-            line-height: 1.38em;
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            font-size:80%;
-            }
-
-            td.tr-caption {
-            font-size: 50%;
-            color:#5d5d5d;
-            font-style:italic;
-            }
-
-            /* Lists
-            ----------------------------------------------- */
-
-            ol {
-            list-style-type: decimal;
-            list-style-position: inside;
-            padding: .6em;
-            margin-left: 50px;
-            padding-left: 15px;
-            }
-
-            ol li {
-            margin-left : 10px;
-            text-align:justify;
-            }
-
-            // 456bereastreet.com
-
-            ol {
-            counter-reset:li; 
-            margin-left:10px; 
-            padding-left:0; 
-            font-size: 80%;
-            }
-
-            ol > li {
-            position:relative;
-            margin:10px 0 10px 2em;
-            padding:2px 8px;
-            list-style:none;
-            line-height: 2em;
-            border-bottom: 2px solid #ededed;
-            }
-
-            ol > li:before {
-            content:counter(li);
-            counter-increment:li;
-            position:absolute;
-            top:-2px;
-            left:-2em;
-            -moz-box-sizing:border-box;
-            -webkit-box-sizing:border-box;
-            box-sizing:border-box;
-            width:2em;
-            margin-left:8px;
-            padding:1px;
-            color:#4b4b4b;
-            font-weight:bold;
-            text-align:center;
-            }
-
-            //end
-
-            li ol,
-            li ul {
-            margin-top:6px;
-            }
-
-            ol ol li:last-child {
-            margin-bottom:0;
-            }
-
-            /* Headings
-            ----------------------------------------------- */
-
-            h1, 
-            h2, 
-            h3, 
-            h4, 
-            h5, 
-            h6 {
-            font: $(body.font);
-            font-size:100%;
-            }
-
-            h1,
-            h2, 
-            h3 {
-            color: #5b5b5b;
-            margin: 0;
-            padding: 1em;
-            font-size: 130%;
-            line-height: 1.2em;
-            font: $(body.font)
-            text-align:justify;
-            text-overflow: ellipsis;
-            word-wrap:true;
-            }
-
-            h4 {
-            font: normal 70% IM Fell English;
-            text-align:center;
-            vertical-align:middle;
-            word-wrap: break-word;
-            border-bottom: 1px solid #ccc;
-            }
-
-            h1,
-            .title
-            {
-            font: normal 160% IM Fell English;
-            text-align:center;
-            vertical-align:middle;
-            word-wrap: break-word;
-            }
-
-
-            /* Cites
-            ----------------------------------------------- */
-
-            blockquote {
-            font: normal 22px IM Fell English;
-            color: #9b9b9b;
-            margin-top: 10px;
-            margin-bottom: 10px;
-            margin-left: 50px;
-            padding-left: 15px;
-            border-left: 3px solid #ccc;
-            border-right:1 px solid #ccc;
-            border-top:1 px solid #ccc;
-            border-bottom: 1 px solid #ccc;
-            }
-
-            blockquote > cite {
-            font: $(body.font);
-            color: #8e8b8e;
-            font-size: 14px;
-            display: block;
-            margin-top: 5px;
-            }
-
-            blockquote > cite:before {
-            content: "\2014 \2009";
-            }
-
-
-            /* Structure
-            ----------------------------------------------- */
-
-            .header-outer {
-            background: #fafafa url(//assets/gradients_light.png) repeat-x scroll 0 -400px;
-            }
-
-            .header-inner .Header .titlewrapper {
-            padding: 22px 30px;
-	    backgroound: $(header.background.color);
-            }
-
-            .header-inner .Header .descriptionwrapper {
-            padding: 40px 30px;
-            margin-bottom: 25px;
-            }
-
-            .Header h1 {
-            font: $(header.font);
-            color: $(header.text.color);
-            text-shadow: 2px 2px rgba(0, 0, 0, .1);
-            }
-
-            .Header h1 a {
-            color: $(header.text.color);
-            }
-
-            .titlewrapper, 
-            .descriptionwrapper {
-            border-bottom: 3px solid #4a4a4a;
-            }
-
-            .mini {
-            float:left;
-            padding-right: 20px;
-            }
-
-            /* Articles
-            ----------------------------------------------- */
-
-
-            /* Widget Headings
-            ----------------------------------------------- */
-
-            div.widget > h2,
-            div.widget h2.title {
-            margin: 0 0 1em 0;
-            font: normal bold 11px IM Fell English;
-            color: #434343;
-            }
-
-            /* Widgets
-            ----------------------------------------------- */
-
-            #Navbar1 {
-            display:none!important;
-            }
-            
-            .widget {
-            text-align:center;
-            vertical-align:middle;
-            }
-
-            .widget-content {
-            clear:both;
-            background-color:#fafafa;
-            }
-
-            .BlogArchive {
-            font-size: 70%;
-            }
-
-            .Text {           
-            text-align:center;
-            margin:0 auto;
-            padding:0,
-            }
-
-            .Text h2 {
-            font-size: 70;
-            color:#4b4b4b;
-            }
-
-
-            /* Async WebFonts
-            ----------------------------------------------- */
-
-            .wf-inactive p {
-            font-family: serif
-            }
-
-            .wf-active p { 
-            font-family: 'IM Fell English', serif;
-            }
-
-            .wf-inactive h1 { 
-            font-family: serif;
-            font-size: 160%;
-            }
-
-            .wf-active h1 { 
-            font-family: 'IM Fell English', serif;
-            font-size: 160%;
-            }
-
-            .wf-inactive h3 { 
-            font-family: serif;
-            font-size: 120%;
-            }
-
-            .wf-active h3 { 
-            font-family: 'IM Fell English', serif;
-            font-size: 120%;
-            }
-	    
-	    
-            #cookieChoiceInfo,
-            .singleton-element {
-            position: fixed;
-            width: 100%;
-            background-color:#fafafa !important;
-            margin-top: 10px !important;
-            left: 0px;
-            top: 0px !important;
-            padding: 0px;
-            z-index: 4000;
-            text-align: center;
-            font-size: 14px !important;
-            font-weight: normal !important;
-            color: #4b4b4b !important;
-            line-height: 160% !important;
-            border-top: 3px solid #4b4b4b;
-            border-bottom: 1px dotted #4b4b4b;
-            }
-
-            .cookie-choices-info .cookie-choices-text {
-            line-height: 1.5em !important;
-            }
-
-            .cookie-choices-info .cookie-choices-button {
-            font-weight: bold;
-            text-transform: capitalize !important;
-            white-space: nowrap;
-            color: #eee;
-            margin-left: 8px;
-            padding: 0 6px;
-            text-decoration: none;
-            }
-
-            .cookie-choices-info .cookie-choices-buttons {
-            display: inline-block;
-            vertical-align: middle;
-            white-space: nowrap;
-            float: right !important;
-            width: 40% !important;
-            margin: 0 10px;
-            }
-
-            .cookie-choices-buttons {
-            width: 40% !important;
-            float:right !important;
-            }
-
-            .singleton-element span {
-            font: 100% ;
-            width: 50% !important;
-            float: left !important;
-            text-align: left !important;
-            margin: 10px !important;
-            color: #4b4b4b !important;
-            }
-
-            ]]>
-
-        </b:skin>
-
-        <link 
-            href='http://fonts.googleapis.com/css?family=IM+Fell+English:400,400italic' 
-            rel='stylesheet' 
-            type='text/css' />
-            
-	<!--[if IE 8]>
-		<script type='text/javascript'>document.documentElement.className += ' ie8 lt-ie9'</script>
-	<![endif]-->
-	<!--[if IE 7]>
-		<script type='text/javascript'>document.documentElement.className += ' ie7 lt-ie8 lt-ie9'</script>
-	<![endif]-->
-	<!--[if lt IE 7]>
-		<script type='text/javascript'>document.documentElement.className += ' ie6 lt-ie7 lt-ie8 lt-ie9'</script>
-	<![endif]-->
-	
-        <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-        <script type='text/javascript' src="//assets/js/utils.js"></script>
-
-    </head>
-
-    <body>
-
-        <b:section class='navbar' id='navbar' maxwidgets='1' showaddelement='no'>
-
-            <b:widget id='Navbar1' locked='true' title='Navigation' type='Navbar'/>
-
-        </b:section>
-
-        <b:if cond='data:blog.pageType == &quot;index&quot;'>
-            <div itemscope='itemscope' itemtype='http://schema.org/Blog' style='display: none;'>
-                <meta expr:content='data:blog.title' itemprop='name'/>
-                <b:if cond='data:blog.metaDescription'>
-                    <meta expr:content='data:blog.metaDescription' itemprop='description'/>
-                </b:if>
-            </div>
-        </b:if>
-
-        <div class='content-outer'>
-
-            <div id='header-wrapper'>
-
-                <header role="banner">
-
-                    <div id='header-inner'>
-
-                        <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
-
-                            <div class="titlewrapper">
-
-                                <b:widget id='wHeader' locked='false' title='Title' type='Header'>
-
-                                    <b:includable id='Header'>
-                                        <b:include name="title" data='blog'/>
-                                    </b:includable> 
-
-                                    <b:includable id='title' var='b'>
-
-                                        <h1 class="title">
-                                            <a expr:href="data:blog.homepageUrl">
-                                                <data:title />
-                                            </a>
-                                        </h1>
-
-                                    </b:includable> 
-
-                                    <b:includable id='description'>
-
-                                        <div class='descriptionwrapper'>
-                                            <h4 class='description'>
-                                                <data:description/>
-                                            </h4>
-                                        </div>
-
-                                    </b:includable>
-
-                                </b:widget>
-
-                            </div>
-
-                        </b:section>
-
+      </div>
+    </b:if>
+    <div class='content-outer'>
+      <div id='header-wrapper'>
+        <header role="banner">
+          <div id='header-inner'>
+            <div class="titlewrapper">
+              <b:section id='header' class='header' maxwidgets="1" showaddelement="no">
+                <b:widget id='Header1' locked='false' title='Title' type='Header'>
+                  <b:includable id='Header'>
+                    <b:include name="title" data='blog'/>
+                  </b:includable>
+                  <b:includable id='title' var='b'>
+                    <h1 class="title">
+                      <a expr:href="data:blog.homepageUrl">
+                        <data:title />
+                      </a>
+                    </h1>
+                  </b:includable>
+                  <b:includable id='description'>
+                    <div class='descriptionwrapper'>
+                      <h4 class='description'>
+                        <data:description/>
+                      </h4>
                     </div>
-
-                </header>
-
+                  </b:includable>
+                </b:widget>
+              </b:section>
             </div>
-
-            <div style='clear: both' />
-
-            <div id='content-wrapper'>
-
-                <b:section id='main' class="main" maxwidgets='' showaddelements='yes' growth="vertical">
-
-                    <b:widget id='Blog1' locked='false' title='Articles' type='Blog'>
-
-                        <!-- TO DO -->
-                        
-                    </b:widget>
-
-                    <div class="main-inner" role="complementary">
-
-                        <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Archive Du Blog' type='BlogArchive'>
-
-                            <b:includable id='BlogElements' var='post'>
-                                <data:b.title/>
-                            </b:includable>
-
-                            <b:includable id='post' var='post'>
-                                <b:if cond='data:blog.pageType == "error_page"'>
-                                    <b:include data='top' name='status-message'/>
-                                </b:if>
-                                <b:include name='Posts'/>
-                                <b:include name='nextprev'/>
-                            </b:includable>
-
-                            <b:includable id='labels' var='post'>
-                                <b:if cond='data:post.labels'>
-                                    Libell&amp;eacute;s :
-                                    <b:loop values='data:post.labels' var='label'>
-                                        <a expr:href='data:label.url' rel='tag'><data:label.name/></a>
-                                        <b:if cond='data:label.isLast != &quot;true&quot;'>, </b:if>
-                                    </b:loop>
-                                </b:if>
-                            </b:includable>
-
-                        </b:widget>
-                    </div>
-                    <b:includable id='shareButtons'/>
-                    <b:includable id='mobile-nextprev'/>
-                    <b:includable id='mobile-index-post'/>
-                </b:section>
-            </div>
-
-            <div style='clear: both' />
-
-            <footer id="footer" role="contentinfo">
-
-                <b:section id='footer' class='footer' showaddelement="no">
-
-                    <b:widget id="HTML1" locked="false" title="Droit d\'Auteur" type="HTML">
-			<b:includable id='main'>
-	                        <div class="copyright">
-	                            Copyright Alain Moreau &amp;ampersand; Segonquart Studio <data:p.timestamp/> - Tous droits r&amp;eacute;serv&amp;eacute;s
-	                        </div>
-			</b:includable>
-                    </b:widget>   
-                    
-                </b:section>
-            </footer>
+          </div>
+        </header>
+      </div>
+      <div style='clear: both' />
+      <div id='content-wrapper'>
+        <div class="main-inner" role="complementary">
+          <b:section id='main' class="main" maxwidgets='' showaddelements='yes' growth="vertical">
+            <b:widget id='Blog1' locked='false' title='Articles' type='Blog'>
+            </b:widget>
+            <b:widget id='BlogArchive1' locked='false'  mobile='yes' title='Archive Du Blog' type='BlogArchive'>
+              <b:includable id='BlogElements' var='post'>
+                <data:b.title/>
+              </b:includable>
+              <b:includable id='post' var='post'>
+                <b:if cond='data:blog.pageType == "error_page"'>
+                  <b:include data='top' name='status-message'/>
+                </b:if>
+                <b:include name='Posts'/>
+                <b:include name='nextprev'/>
+              </b:includable>
+              <b:includable id='labels' var='post'>
+                <b:if cond='data:post.labels'>
+                  Libell&amp;eacute;s :
+                  <b:loop values='data:post.labels' var='label'>
+                    <a expr:href='data:label.url' rel='tag'>
+                      <data:label.name/>
+                    </a>
+                    <b:if cond='data:label.isLast != &quot;true&quot;'>
+                      , 
+                    </b:if>
+                  </b:loop>
+                </b:if>
+              </b:includable>
+            </b:widget>
+            <b:includable id='shareButtons'/>
+            <b:includable id='mobile-nextprev'/>
+            <b:includable id='mobile-index-post'/>
+          </b:section>
         </div>
-    </body>
+</div>
+      <div style='clear: both' />
+      <footer id="footer" role="contentinfo">
+        <b:section id='footer' class='footer' showaddelement="no">
+          <b:widget id="HTML1" locked="false" title="Droit d\'Auteur" type="HTML">
+            <b:includable id='main'>
+              <div class="copyright">
+                Copyright Alain Moreau i Segonquart Studio 
+                <data:p.timestamp/>
+                - Tous droits résérves
+              </div>
+            </b:includable>
+          </b:widget>
+        </b:section>
+      </footer>
+    </div>
+  </body>
 </html>
